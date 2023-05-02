@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} checkout {% endblock %}
+    
+
+{% block content %}
+    <div class=" m-32">
+        <form action="" method="POST" class="space-y-4">
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <button class="py-3 px-4 bg-gray-800 w-full rounded-md text-white" type="submit"> valide</button>
+        </form>
+    </div>
+{% endblock  %}
+    

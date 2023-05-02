@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+    <title>
+        {% block title %}
+           Shopp
+        {% endblock %}
+    </title>
+</head>
+<body class="" >
+     
+   <div>
+    <h4 style="text-align: center; font-weight: 700;" >boutique en ligne </h4>
+ </div>
+ 
+ <a href=" {% url 'auths'%}">Enregister</a>
+ {% if user.is_authenticated %}
+    <a href="{% url 'user_logout' %}"> Deconnecté</a>
+      <p class="text-rose-500">
+      hello ,  {{ user.username }}
+     </p>
+ {% else %}
+   <a href="{% url 'user_login'%}"> login</a>
+  
+ {% endif %}
+    
+    {% if user.order %}
+    <a class="text-rose-500" href="{%  url 'cart' %}"> voir le  panier ({{ user.order.products.count }})</a>
+    
+    {% endif %}
+      
+    <a href="{% url 'index' %}">acceills</a>
+    {% block content %}
+    
+    {% endblock %}
+</body>
+</html>
+

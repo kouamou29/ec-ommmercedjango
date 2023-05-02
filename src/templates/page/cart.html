@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}  cart {% endblock  %}
+
+
+
+{% block content  %} 
+   
+     <center>
+
+   {% for order in orders %}
+  
+   <table class="border-separate border border-slate-500 ">
+       <tr>
+           <td></td>
+           <td>products</td>
+           <td>quatity</td>
+           <td>price</td>
+       </tr>
+   
+   <tr>
+       <td>
+           <img src="{{ order.products.image.url }}" alt="{{order.products.name}}" style="width: 50px; height: 50px;">
+       </td>
+       <td>
+           {{ order.products.name }}
+       </td>
+       <td>{{order.quatity}}
+
+       </td>
+       <td class="text-rose-500"> 
+        € {{ order.products.price }}
+
+       </td>
+       <td>
+        
+        <a href="{% url 'reduce_cart_prodcut'  order.products.id %}">-</a>
+        <a href="{% url 'cart_prodcut'  order.products.id %}">+</a>
+
+           
+       </td>
+       <td>
+       
+       </td>
+   </tr>
+</table>
+
+
+{% endfor %}
+<a href="{% url 'removecart' %}">delete</a>
+
+
+         
+         {% if total %}
+         <p class="text-rose-500">
+          Total :  € {{ total }}
+         </p>
+         {% else %}
+           <p>votre commande est vide </p>
+        
+         {% endif %}
+            
+       
+     <a href="{% url 'checkout' %}">checkout</a>
+     </center>
+    
+{% endblock  %}
+    
+    

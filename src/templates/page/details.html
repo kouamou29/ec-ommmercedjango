@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} details de products {% endblock title %}
+    
+
+{% block content %}
+  <center>
+    <div>
+        <img src="{{ products.image.url }}" alt="{{products.name}}" width="300" height="200">
+    </div>
+     <div>
+        <p>
+            {{ products.description }}
+        </p>
+        <div>
+            <a class="py-3 px-2 bg-gray-900 mt-2 rounded-md text-white hover:bg-gray-700 mt-3" href="{% url 'add_to_cart' products.slug %} ">add to cart </a>
+        </div>
+     </div>
+  </center>
+{% endblock  %}
+    

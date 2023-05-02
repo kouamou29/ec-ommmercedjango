@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} Login user{% endblock title %}
+
+
+
+{% block content %}
+{% for message in messages  %}
+<p>
+   {{ message }}
+</p>
+{% endfor %}
+
+   <div class="flex justify-center py-16">
+       <h4 class="">
+          Login Page 
+       </h4>
+   </div>
+ <div class="flex justify-center mt-16">
+    <form action=" {% url 'user_login' %}" method="POST">
+        {% csrf_token %}
+        <label for="">Username</label><br>
+        <input class="py-3 px-2 w-96 rounded-md border-double border-4 border-blue-950" type="text" placeholder="Username" name="username" v><br>
+
+        <label for="">Password</label><br>
+        <input class="py-3 px-2 w-96 rounded-md border-double border-4 border-blue-950" type="password" placeholder="Password" name="password" ><br>
+        
+        <button class="py-3 px-2 bg-gray-900 mt-2 rounded-md text-white hover:bg-gray-700" type="submit" value=""> Login   User</button><br>
+    </form>
+</div>
+{% endblock  %}
+    
+    
