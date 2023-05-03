@@ -25,10 +25,9 @@ SECRET_KEY = 'django-insecure-r=s-1454m+@+$ml#rlc(*pqi-qlw0umxinl1wqc1qhoz#ulij&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-CSRF_TRUSTED_ORIGINS = ['web-production-0114.up.railway.app']
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['web-production-0114.up.railway.app']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Application definition
