@@ -94,10 +94,6 @@ DATABASES = {
 }
 
 
-STORAGES = {
-    # ...
-    "staticfiles": {"BACKEND": "shopapp.storage.S3Storage"}
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
