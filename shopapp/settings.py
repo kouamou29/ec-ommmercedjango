@@ -29,7 +29,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['web-production-0114.up.railway.app', ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -93,6 +93,11 @@ DATABASES = {
     }
 }
 
+
+STORAGES = {
+    # ...
+    "staticfiles": {"BACKEND": "shopapp.storage.S3Storage"}
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
