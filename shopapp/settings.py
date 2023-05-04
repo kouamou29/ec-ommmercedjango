@@ -54,6 +54,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'https://web-production-0114.up.railway.app/',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-0114.up.railway.app/',
+]
+
 ROOT_URLCONF = 'shopapp.urls'
 
 TEMPLATES = [
